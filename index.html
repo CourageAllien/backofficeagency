@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backoffice Agency — Your Entire Back Office, Replaced by AI</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- NAVIGATION                                                        -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+          <path d="M10 16L14 20L22 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#635BFF"/>
+              <stop offset="1" stop-color="#0A2540"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Backoffice Agency</span>
+      </a>
+      <div class="nav-links">
+        <a href="#what-we-replace">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#pricing" class="btn btn-ghost">Sign In</a>
+        <a href="#pricing" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#what-we-replace">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="btn btn-primary" style="margin-top:1rem;text-align:center;">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- HERO                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge fade-up">
+        <span class="badge-dot"></span>
+        Now accepting new clients for Q1 2026
+      </div>
+      <h1 class="hero-headline fade-up delay-1">
+        Your entire back office.<br>
+        <span class="gradient-text">Replaced by AI.</span><br>
+        <span class="hero-subline">Managed by a human. Running by next week.</span>
+      </h1>
+      <p class="hero-description fade-up delay-2">
+        We deploy AI-powered sales, marketing, finance, and operations systems
+        for independent consultants and executives. Fixed monthly price.
+        No building it yourself. No six-figure agency contracts.
+      </p>
+      <div class="hero-ctas fade-up delay-3">
+        <a href="#how-it-works" class="btn btn-primary btn-lg">
+          See How It Works
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="btn btn-outline btn-lg">
+          Book a 15-Minute Walkthrough
+        </a>
+      </div>
+      <div class="hero-proof fade-up delay-4">
+        <div class="avatar-stack">
+          <div class="avatar" style="background: linear-gradient(135deg, #635BFF, #0A2540);">J</div>
+          <div class="avatar" style="background: linear-gradient(135deg, #00D4AA, #0A2540);">S</div>
+          <div class="avatar" style="background: linear-gradient(135deg, #FF6B6B, #0A2540);">M</div>
+          <div class="avatar" style="background: linear-gradient(135deg, #FFD93D, #0A2540);">A</div>
+        </div>
+        <span>Trusted by consultants billing $200-$500+/hr</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- PROBLEM                                                            -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section problem-section" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">The Problem</p>
+        <h2 class="section-title fade-up delay-1">
+          You left corporate to do the work you're great at.<br>
+          <span class="gradient-text">Instead, you're drowning in everything else.</span>
+        </h2>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-main fade-up delay-2">
+          <div class="stat-callout">
+            <span class="stat-number" data-target="40">0</span><span class="stat-suffix">%</span>
+            <span class="stat-label">of your week spent on non-revenue work</span>
+          </div>
+          <p>
+            Prospecting. Writing follow-ups. Updating spreadsheets. Creating content
+            you never have time to post. Formatting reports. Chasing invoices.
+            Cobbling together 12 different SaaS tools that barely talk to each other.
+          </p>
+          <p class="highlight-text">
+            You didn't leave a $300K role to become your own admin.
+          </p>
+        </div>
+        <div class="problem-cards">
+          <div class="problem-card fade-up delay-2">
+            <div class="problem-card-icon">💸</div>
+            <h3>Agencies</h3>
+            <p>$15K–$50K for custom AI projects that take 8 weeks. Overkill for your practice.</p>
+          </div>
+          <div class="problem-card fade-up delay-3">
+            <div class="problem-card-icon">🎓</div>
+            <h3>AI Gurus</h3>
+            <p>They'll sell you templates and wish you luck. You're on your own.</p>
+          </div>
+          <div class="problem-card fade-up delay-4">
+            <div class="problem-card-icon">🔧</div>
+            <h3>Automation Platforms</h3>
+            <p>They expect you to become an engineer. You bill $200-$500/hr.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-solution fade-up">
+        <p>
+          You need systems that just run. Deployed for you. Managed for you.
+          Generating pipeline while you sleep.
+        </p>
+        <p class="gradient-text solution-tagline">That's what we build.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- WHAT WE REPLACE                                                    -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section replace-section" id="what-we-replace">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">What We Replace</p>
+        <h2 class="section-title fade-up delay-1">
+          We replace <span class="gradient-text">30+ back office roles.</span><br>
+          Here's every one of them.
+        </h2>
+        <p class="section-subtitle fade-up delay-2">
+          Each department below is a set of AI systems — built, deployed, and
+          managed by a dedicated human. Click through for the full role-by-role breakdown.
+        </p>
+      </div>
+      <div class="departments-grid">
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3>Your AI Finance Department</h3>
+          <p>Bookkeeping, reporting, forecasting, invoicing — automated.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Your AI Chief of Staff</h3>
+          <p>Meeting intel, scheduling, admin, project management — handled.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </div>
+          <h3>Your AI Marketing Engine</h3>
+          <p>Content, campaigns, competitive intelligence — on autopilot.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Your AI Sales System</h3>
+          <p>Prospecting, outreach, proposals, CRM — running 24/7.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          </div>
+          <h3>Your AI Intelligence Team</h3>
+          <p>Dashboards, analytics, attribution, insights — in real time.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          </div>
+          <h3>Your AI Legal Assistant</h3>
+          <p>Contracts, compliance, privacy, audit trails — documented.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Your AI People Operations</h3>
+          <p>Recruiting, onboarding, training, contractor management — streamlined.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Your AI Tech Team</h3>
+          <p>Integrations, hosting, monitoring, security — we manage it all.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+
+        <div class="dept-card fade-up" data-tilt>
+          <div class="dept-card-glow"></div>
+          <div class="dept-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <h3>Your AI Client Success System</h3>
+          <p>Health scoring, communication tracking, knowledge bases — covered.</p>
+          <span class="dept-arrow">→</span>
+        </div>
+      </div>
+      <div class="section-cta fade-up">
+        <a href="#" class="link-arrow">
+          See the full breakdown — every role and the system that replaces it
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- HOW IT WORKS                                                       -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">How It Works</p>
+        <h2 class="section-title fade-up delay-1">
+          Stupidly simple.<br>
+          <span class="gradient-text">Unreasonably fast.</span>
+        </h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card fade-up">
+          <div class="step-number">01</div>
+          <div class="step-line"></div>
+          <h3>Subscribe</h3>
+          <p>Pick your plan. Get onboarded to your private request board within 24 hours.</p>
+        </div>
+        <div class="step-card fade-up delay-1">
+          <div class="step-number">02</div>
+          <div class="step-line"></div>
+          <h3>Request</h3>
+          <p>Submit as many requests as you want. Describe what you need, the goal, and who it's for. We handle everything else.</p>
+        </div>
+        <div class="step-card fade-up delay-2">
+          <div class="step-number">03</div>
+          <div class="step-line"></div>
+          <h3>We Build</h3>
+          <p>Receive your AI system or asset in an average of 3–5 business days. Revisions are unlimited — we go until you're thrilled.</p>
+        </div>
+        <div class="step-card fade-up delay-3">
+          <div class="step-number">04</div>
+          <div class="step-line"></div>
+          <h3>Launch &amp; Profit</h3>
+          <p>We deploy it, connect it to your stack, and track ROI. Everything we build is tied to a measurable outcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- ROI COMPARISON                                                     -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section roi-section" id="roi">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">The ROI</p>
+        <h2 class="section-title fade-up delay-1">
+          The math is<br>
+          <span class="gradient-text">embarrassingly simple.</span>
+        </h2>
+      </div>
+      <div class="comparison-grid">
+
+        <div class="comparison-card card-bad fade-up">
+          <div class="comparison-tag">Option A</div>
+          <h3>Hire In-House</h3>
+          <ul>
+            <li>AI/automation engineer: <strong>$120K–$180K/yr</strong></li>
+            <li>Marketing ops: <strong>$80K–$120K/yr</strong></li>
+            <li>Sales ops: <strong>$80K–$120K/yr</strong></li>
+            <li>Plus recruiting, benefits, overhead</li>
+          </ul>
+          <div class="comparison-total">
+            <span class="comparison-price">$350K–$500K+</span>
+            <span class="comparison-period">/year</span>
+          </div>
+          <p class="comparison-timeline">3–6 months to hire. 3+ months to ramp.</p>
+        </div>
+
+        <div class="comparison-card card-bad fade-up delay-1">
+          <div class="comparison-tag">Option B</div>
+          <h3>Hire an Agency</h3>
+          <ul>
+            <li>AI strategy consulting: <strong>$15K–$30K/project</strong></li>
+            <li>Custom tool development: <strong>$20K–$50K/build</strong></li>
+            <li>Ongoing maintenance: <strong>$5K–$10K/mo</strong></li>
+            <li>6–12 week delivery timelines</li>
+          </ul>
+          <div class="comparison-total">
+            <span class="comparison-price">$100K–$300K+</span>
+            <span class="comparison-period">/year</span>
+          </div>
+          <p class="comparison-timeline">Limited output. Project-based billing.</p>
+        </div>
+
+        <div class="comparison-card card-good fade-up delay-2">
+          <div class="comparison-tag tag-highlight">Option C</div>
+          <h3>Us</h3>
+          <ul>
+            <li>Flat monthly fee. Unlimited requests &amp; revisions.</li>
+            <li>3–5 business day delivery.</li>
+            <li>Custom integrations.</li>
+            <li>Dedicated project manager.</li>
+            <li>Weekly strategy sessions.</li>
+            <li>Pause or cancel anytime.</li>
+          </ul>
+          <div class="comparison-total">
+            <span class="comparison-price highlight-price">$18,000</span>
+            <span class="comparison-period">/year</span>
+          </div>
+          <p class="comparison-timeline good-timeline">ROI from week one.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- PRICING                                                            -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Pricing</p>
+        <h2 class="section-title fade-up delay-1">
+          One plan. Everything included.<br>
+          <span class="gradient-text">No surprises.</span>
+        </h2>
+      </div>
+      <div class="pricing-card-wrapper fade-up delay-2">
+        <div class="pricing-card">
+          <div class="pricing-card-glow"></div>
+          <div class="pricing-amount">
+            <span class="currency">$</span><span class="price">1,500</span><span class="period">/month</span>
+          </div>
+          <p class="pricing-desc">Everything you need to run your practice on AI infrastructure.</p>
+          <ul class="pricing-features">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              One active request at a time
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Average 3–5 business day delivery
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Unlimited requests in your queue
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Unlimited revisions
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Private request board (Trello or Notion)
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Custom integrations with your existing tools
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Dedicated project manager
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Weekly strategy session
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167 3.333 10" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Pause or cancel anytime
+            </li>
+          </ul>
+          <div class="pricing-ctas">
+            <a href="#" class="btn btn-primary btn-lg btn-full">Get Started</a>
+            <a href="#" class="btn btn-outline btn-lg btn-full">Book a 15-Minute Walkthrough</a>
+          </div>
+          <div class="pricing-guarantee">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 18.333a8.333 8.333 0 100-16.667 8.333 8.333 0 000 16.667z" stroke="#00D4AA" stroke-width="1.5"/><path d="M7.5 10l1.667 1.667L12.5 8.333" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Not thrilled after week one? Get 75% back. No questions asked.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- WHO THIS IS FOR                                                    -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section who-section" id="who">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Who This Is For</p>
+        <h2 class="section-title fade-up delay-1">
+          Built for operators,<br>
+          <span class="gradient-text">not beginners.</span>
+        </h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-card who-yes fade-up">
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#00D4AA" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            This is for you if:
+          </h3>
+          <ul>
+            <li>You left a senior corporate role and now run an independent practice</li>
+            <li>You're billing $150K–$1M+ annually but spending half your time on ops</li>
+            <li>You have deep expertise but zero operational infrastructure</li>
+            <li>You're currently stitching together 8–15 SaaS tools that barely work</li>
+            <li>You want systems that run, not templates you have to figure out</li>
+            <li>You value your time at $200–$500+/hour and refuse to waste it on admin</li>
+          </ul>
+        </div>
+        <div class="who-card who-no fade-up delay-1">
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#FF6B6B" stroke-width="2"/><path d="M15 9l-6 6M9 9l6 6" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            This is NOT for you if:
+          </h3>
+          <ul>
+            <li>You're looking for a chatbot or a single automation</li>
+            <li>You want to learn how to build AI systems yourself</li>
+            <li>You need a full custom development project (we do productized, not bespoke)</li>
+            <li>You're pre-revenue and still figuring out what you sell</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SOCIAL PROOF / STATS                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section proof-section" id="proof">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Results</p>
+        <h2 class="section-title fade-up delay-1">
+          What happens when<br>
+          <span class="gradient-text">the systems go live.</span>
+        </h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card fade-up">
+          <span class="stat-value"><span data-target="15">0</span>+</span>
+          <span class="stat-desc">Hours/week saved on non-billable work</span>
+        </div>
+        <div class="stat-card fade-up delay-1">
+          <span class="stat-value"><span data-target="340">0</span>%</span>
+          <span class="stat-desc">Increase in qualified inbound leads</span>
+        </div>
+        <div class="stat-card fade-up delay-2">
+          <span class="stat-value"><span data-target="5">0</span></span>
+          <span class="stat-desc">Days from signup to systems live</span>
+        </div>
+        <div class="stat-card fade-up delay-3">
+          <span class="stat-value">$<span data-target="127">0</span>K</span>
+          <span class="stat-desc">In pipeline generated in first 90 days</span>
+        </div>
+      </div>
+      <div class="testimonial fade-up">
+        <blockquote>
+          "I was spending 20 hours a week on things that weren't client work. Within 10 days of subscribing, I had AI systems handling my outreach, my content, and my invoicing. It genuinely changed how I operate."
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background: linear-gradient(135deg, #635BFF, #0A2540);">J</div>
+          <div>
+            <strong>Founding Client</strong>
+            <span>Independent Management Consultant</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- FAQ                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section faq-section" id="faq">
+    <div class="container container-narrow">
+      <div class="section-header">
+        <p class="section-label fade-up">FAQ</p>
+        <h2 class="section-title fade-up delay-1">
+          Frequently asked questions.
+        </h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>What exactly do I get for $1,500/month?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Unlimited AI system requests, built and deployed for your business. You submit requests through a private board. We build one at a time, averaging 3–5 business days per deliverable, with unlimited revisions. You also get a dedicated project manager and weekly strategy calls.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>How is this different from hiring a freelancer or agency?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Freelancers and agencies charge $15K–$50K per project and take 6–12 weeks. We deploy pre-built, battle-tested systems configured to your business in days. Fixed monthly cost, not project-based billing. And you get unlimited requests — not a single deliverable.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>What if I don't like what you build?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Revisions are unlimited. We iterate until you're happy. And if you're not satisfied after your first week, we'll refund 75% with no questions asked.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I pause my subscription?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Pause anytime if you're between projects or taking time off. Your systems stay configured. Unpause when you're ready.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>What tools do you use?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Our stack includes n8n, Claude, GPT-4o, Apollo, Gamma, HubSpot, Airtable, and 20+ other tools depending on what your practice needs. You don't need to learn any of them. We handle everything.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need to be technical?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. You describe what you need in plain English. We build it, deploy it, connect it to your tools, and show you how to use it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>How fast can I get started?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>You're onboarded within 24 hours of subscribing. Most clients have their first system live within the first week.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>What if I already use a CRM / email tool / accounting software?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>We integrate with your existing stack. HubSpot, Salesforce, QuickBooks, Google Workspace, Slack, Notion — whatever you use, we connect to it. No ripping and replacing.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- FINAL CTA                                                          -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section final-cta-section" id="final-cta">
+    <div class="final-cta-bg">
+      <div class="gradient-orb orb-cta-1"></div>
+      <div class="gradient-orb orb-cta-2"></div>
+    </div>
+    <div class="container">
+      <div class="final-cta-content">
+        <h2 class="fade-up">
+          Stop running your business<br>
+          <span class="gradient-text">like it's 2019.</span>
+        </h2>
+        <p class="final-cta-body fade-up delay-1">
+          You have the expertise. You have the clients. You have the reputation.
+          What you don't have is 50 hours a week to spend on prospecting,
+          content, reporting, and operations — on top of the work that actually pays.
+        </p>
+        <p class="final-cta-urgency fade-up delay-2">
+          Your competitors are deploying AI systems right now. Not thinking
+          about it. Not watching YouTube videos about it. <strong>Deploying it.</strong>
+        </p>
+        <p class="final-cta-closer fade-up delay-3">
+          One decision. One subscription. Your entire practice runs different by next week.
+        </p>
+        <div class="final-cta-buttons fade-up delay-3">
+          <a href="#pricing" class="btn btn-primary btn-lg">
+            Get Started — $1,500/month
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="btn btn-outline btn-lg">Book a 15-Minute Walkthrough</a>
+        </div>
+        <p class="final-cta-email fade-up delay-4">
+          Questions? Email <a href="mailto:hello@backofficeagency.com">hello@backofficeagency.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- FOOTER                                                             -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="url(#logoGrad2)"/>
+              <path d="M10 16L14 20L22 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="logoGrad2" x1="0" y1="0" x2="32" y2="32">
+                  <stop stop-color="#635BFF"/>
+                  <stop offset="1" stop-color="#0A2540"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>Backoffice Agency</span>
+          </a>
+          <p>AI-powered back office systems for independent consultants and executives.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#what-we-replace">Services</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#roi">ROI</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Backoffice Agency. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
