@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Breakdown — Every Role We Replace | Backoffice Agency</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Breakdown-specific styles */
+    .breakdown-hero {
+      padding: calc(var(--space-5xl) + 80px) 0 var(--space-3xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .breakdown-hero .gradient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .breakdown-hero .orb-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(99,91,255,0.25) 0%, transparent 70%);
+      top: -10%; right: -5%;
+      animation: orbFloat1 15s ease-in-out infinite;
+    }
+    .breakdown-hero .orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,212,170,0.15) 0%, transparent 70%);
+      bottom: 0; left: -5%;
+      animation: orbFloat2 18s ease-in-out infinite;
+    }
+    .breakdown-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: var(--space-xl);
+      transition: all var(--duration-normal);
+    }
+    .back-link:hover {
+      color: var(--color-primary-hover);
+      gap: var(--space-md);
+    }
+    .breakdown-intro {
+      font-size: 1.125rem;
+      color: var(--color-text);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* Department Sections */
+    .dept-section {
+      padding: var(--space-4xl) 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .dept-section:nth-child(even) {
+      background: var(--color-bg-dark);
+    }
+    .dept-header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-3xl);
+    }
+    .dept-header-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-lg);
+      background: rgba(99,91,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .dept-header-text h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--color-text-strong);
+      margin-bottom: var(--space-sm);
+      letter-spacing: -0.02em;
+    }
+    .dept-header-text p {
+      font-size: 1.0625rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    /* Role Cards */
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-lg);
+    }
+    .role-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      transition: all var(--duration-normal) var(--ease-out-quart);
+      position: relative;
+      overflow: hidden;
+    }
+    .role-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: opacity var(--duration-normal);
+    }
+    .role-card:hover {
+      border-color: var(--color-border-hover);
+      background: var(--color-surface-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+    .role-card:hover::before {
+      opacity: 1;
+    }
+    .role-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text-strong);
+      margin-bottom: var(--space-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .role-title .role-badge {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(0,212,170,0.12);
+      color: var(--color-accent);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+    .role-desc {
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      line-height: 1.7;
+      margin-bottom: var(--space-md);
+    }
+    .role-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+    .role-tool-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      padding: 2px 10px;
+    }
+
+    /* Bottom CTA */
+    .breakdown-cta {
+      text-align: center;
+      padding: var(--space-5xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .breakdown-cta h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--color-text-strong);
+      margin-bottom: var(--space-lg);
+      letter-spacing: -0.03em;
+    }
+    .breakdown-cta p {
+      font-size: 1.125rem;
+      color: var(--color-text);
+      max-width: 560px;
+      margin: 0 auto var(--space-2xl);
+    }
+    .breakdown-cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    /* Count badge on dept headers */
+    .role-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(99,91,255,0.12);
+      color: var(--color-primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-left: var(--space-sm);
+    }
+
+    @media (max-width: 768px) {
+      .dept-header {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+      .roles-grid {
+        grid-template-columns: 1fr;
+      }
+      .breakdown-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+          <path d="M10 16L14 20L22 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#635BFF"/>
+              <stop offset="1" stop-color="#0A2540"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Backoffice Agency</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#what-we-replace">Services</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="nav-cta">
+        <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#what-we-replace">Services</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#pricing" class="btn btn-primary" style="margin-top:1rem;text-align:center;">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="breakdown-hero">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="container breakdown-hero-content">
+      <a href="index.html" class="back-link fade-up">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Home
+      </a>
+      <h1 class="section-title fade-up delay-1">
+        Every role we replace.<br>
+        <span class="gradient-text">Every system we build.</span>
+      </h1>
+      <p class="breakdown-intro fade-up delay-2">
+        9 departments. 30+ roles. Each one is a set of AI-powered systems — built, deployed, and
+        managed by a dedicated human on your behalf. Here's the full breakdown.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 1. FINANCE DEPARTMENT                                           -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI Finance Department <span class="role-count">4 roles</span></h2>
+          <p>From bookkeeping to forecasting, your finances run on autopilot. No spreadsheets. No chasing invoices. No surprises at tax time.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Bookkeeper <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Categorizes transactions, reconciles accounts, and keeps your books clean in real time. Syncs with your bank and accounting software automatically.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">QuickBooks</span>
+            <span class="role-tool-tag">Xero</span>
+            <span class="role-tool-tag">Airtable</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Financial Reporter</div>
+          <p class="role-desc">Generates weekly and monthly P&L reports, cash flow summaries, and margin analysis. Delivered to your inbox or dashboard — no pulling reports manually.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Google Sheets</span>
+            <span class="role-tool-tag">Airtable</span>
+            <span class="role-tool-tag">Gamma</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Forecaster</div>
+          <p class="role-desc">Projects revenue, expenses, and cash runway based on historical data and pipeline activity. Flags risks before they become problems.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">GPT-4o</span>
+            <span class="role-tool-tag">Google Sheets</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Invoice &amp; Collections Agent</div>
+          <p class="role-desc">Sends invoices on schedule, follows up on overdue payments, and tracks payment status. No more chasing clients for money.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Stripe</span>
+            <span class="role-tool-tag">QuickBooks</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 2. CHIEF OF STAFF                                               -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI Chief of Staff <span class="role-count">4 roles</span></h2>
+          <p>Your meetings, schedule, admin, and project management — handled by AI so you can focus on the work that matters.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Meeting Intelligence <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Records meetings, generates transcripts, extracts action items, and sends follow-up summaries to all participants automatically.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Otter.ai</span>
+            <span class="role-tool-tag">Claude</span>
+            <span class="role-tool-tag">Slack</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Scheduler</div>
+          <p class="role-desc">Manages your calendar, handles booking requests, resolves conflicts, and sends prep briefs before every meeting.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Calendly</span>
+            <span class="role-tool-tag">Google Calendar</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Admin Assistant</div>
+          <p class="role-desc">Handles email triage, document organization, travel coordination, and routine communications so nothing slips through the cracks.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Gmail</span>
+            <span class="role-tool-tag">Google Drive</span>
+            <span class="role-tool-tag">Claude</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Project Manager</div>
+          <p class="role-desc">Tracks project milestones, sends status updates, flags blockers, and keeps your team aligned without daily stand-ups.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Notion</span>
+            <span class="role-tool-tag">Trello</span>
+            <span class="role-tool-tag">Slack</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 3. MARKETING ENGINE                                             -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI Marketing Engine <span class="role-count">4 roles</span></h2>
+          <p>Content, campaigns, competitive intelligence, and lead gen — running on autopilot so your brand stays visible without consuming your week.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Content Writer <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Produces blog posts, social media content, email newsletters, and thought leadership pieces in your voice and style. Scheduled and published automatically.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Claude</span>
+            <span class="role-tool-tag">GPT-4o</span>
+            <span class="role-tool-tag">Buffer</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Campaign Manager</div>
+          <p class="role-desc">Plans, executes, and optimizes email drip campaigns, ad sequences, and nurture flows. Tests subject lines and CTAs to maximize conversions.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">HubSpot</span>
+            <span class="role-tool-tag">Mailchimp</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Competitive Intel Analyst</div>
+          <p class="role-desc">Monitors competitors' websites, pricing, content, and reviews. Delivers weekly briefings so you always know what the market is doing.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Claude</span>
+            <span class="role-tool-tag">Airtable</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI SEO &amp; Local Marketing Specialist</div>
+          <p class="role-desc">Optimizes your Google Business profile, generates location-based content, monitors local rankings, and manages review responses to keep you visible in your area.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Google Business</span>
+            <span class="role-tool-tag">Ahrefs</span>
+            <span class="role-tool-tag">Claude</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 4. SALES SYSTEM                                                 -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI Sales System <span class="role-count">4 roles</span></h2>
+          <p>From finding leads to closing deals — your sales pipeline runs 24/7 without you manually prospecting or writing proposals.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Prospector <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Identifies and qualifies ideal prospects based on your criteria. Builds targeted lead lists from multiple data sources and enriches contact information.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Apollo</span>
+            <span class="role-tool-tag">LinkedIn</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Outreach Agent</div>
+          <p class="role-desc">Crafts personalized cold emails and follow-up sequences. Adapts messaging based on engagement signals and manages multi-touch campaigns across channels.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Apollo</span>
+            <span class="role-tool-tag">GPT-4o</span>
+            <span class="role-tool-tag">Instantly</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Proposal Writer</div>
+          <p class="role-desc">Generates custom proposals, SOWs, and estimates based on templates and project details. Formats them professionally and tracks when they're viewed.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Claude</span>
+            <span class="role-tool-tag">Gamma</span>
+            <span class="role-tool-tag">PandaDoc</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI CRM Manager</div>
+          <p class="role-desc">Keeps your CRM clean and updated automatically. Logs activities, moves deals through stages, and alerts you when hot leads need attention.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">HubSpot</span>
+            <span class="role-tool-tag">Salesforce</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 5. INTELLIGENCE TEAM                                            -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI Intelligence Team <span class="role-count">3 roles</span></h2>
+          <p>Real-time dashboards, analytics, and insights — so you make decisions based on data, not gut feelings.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Dashboard Builder <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Creates live dashboards tracking revenue, leads, project status, and KPIs. Updates in real time from all your connected tools.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Airtable</span>
+            <span class="role-tool-tag">Google Sheets</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Analytics Analyst</div>
+          <p class="role-desc">Interprets your data and delivers plain-English insights. Highlights trends, anomalies, and opportunities you'd otherwise miss.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Claude</span>
+            <span class="role-tool-tag">GPT-4o</span>
+            <span class="role-tool-tag">Airtable</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Attribution Tracker</div>
+          <p class="role-desc">Connects the dots between marketing spend, lead sources, and closed deals. Shows you exactly what's working and what's wasting money.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">HubSpot</span>
+            <span class="role-tool-tag">Google Analytics</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 6. LEGAL ASSISTANT                                              -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI Legal Assistant <span class="role-count">3 roles</span></h2>
+          <p>Contracts, compliance, and documentation handled — so you stay protected without paying lawyer rates for routine paperwork.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Contract Generator <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Creates service agreements, NDAs, subcontractor agreements, and scope documents from your approved templates. Pre-filled with client details.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Claude</span>
+            <span class="role-tool-tag">PandaDoc</span>
+            <span class="role-tool-tag">Google Docs</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Compliance Monitor</div>
+          <p class="role-desc">Tracks regulatory requirements, license renewals, insurance deadlines, and policy updates. Sends reminders before anything expires.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Airtable</span>
+            <span class="role-tool-tag">n8n</span>
+            <span class="role-tool-tag">Google Calendar</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Audit Trail Keeper</div>
+          <p class="role-desc">Maintains complete documentation of decisions, approvals, and communications. Creates searchable archives for any dispute or review.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Notion</span>
+            <span class="role-tool-tag">Google Drive</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 7. PEOPLE OPERATIONS                                            -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI People Operations <span class="role-count">4 roles</span></h2>
+          <p>Hiring, onboarding, training, and team management — streamlined so you can scale without an HR department.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Recruiter <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Posts job listings, screens applicants, and ranks candidates based on your criteria. Schedules interviews and sends rejections automatically.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Indeed</span>
+            <span class="role-tool-tag">Claude</span>
+            <span class="role-tool-tag">Airtable</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Onboarding Coordinator</div>
+          <p class="role-desc">Sends welcome packets, assigns training materials, collects paperwork, and guides new hires or contractors through day one to day thirty.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Notion</span>
+            <span class="role-tool-tag">Slack</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Training Coordinator</div>
+          <p class="role-desc">Builds SOPs, training docs, and video tutorials from your existing knowledge. Tracks completion and identifies skill gaps.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Loom</span>
+            <span class="role-tool-tag">Notion</span>
+            <span class="role-tool-tag">Claude</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Contractor Manager</div>
+          <p class="role-desc">Tracks contractor hours, manages payments, handles scheduling, and maintains performance records for your subcontractors and freelancers.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Airtable</span>
+            <span class="role-tool-tag">QuickBooks</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 8. TECH TEAM                                                    -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI Tech Team <span class="role-count">3 roles</span></h2>
+          <p>Integrations, hosting, monitoring, and security — we manage the tech so you never have to think about it.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Integration Engineer <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Connects all your tools together so data flows seamlessly. No more copy-pasting between apps or manual data entry.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">n8n</span>
+            <span class="role-tool-tag">Zapier</span>
+            <span class="role-tool-tag">APIs</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI System Monitor</div>
+          <p class="role-desc">Watches all your automations 24/7. Catches errors, retries failed tasks, and alerts your project manager if something needs manual attention.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">n8n</span>
+            <span class="role-tool-tag">Slack</span>
+            <span class="role-tool-tag">UptimeRobot</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Security &amp; Backup Manager</div>
+          <p class="role-desc">Manages access controls, data backups, and security protocols. Ensures your business data is protected and recoverable.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">1Password</span>
+            <span class="role-tool-tag">Google Workspace</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- 9. CLIENT SUCCESS                                               -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="dept-section">
+    <div class="container">
+      <div class="dept-header fade-up">
+        <div class="dept-header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <div class="dept-header-text">
+          <h2>Your AI Client Success System <span class="role-count">3 roles</span></h2>
+          <p>Keep your clients happy, informed, and coming back — without spending hours on check-ins and status updates.</p>
+        </div>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card fade-up">
+          <div class="role-title">AI Client Health Scorer <span class="role-badge">Automated</span></div>
+          <p class="role-desc">Monitors engagement, response times, and satisfaction signals. Flags at-risk clients before they churn so you can step in at the right time.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">HubSpot</span>
+            <span class="role-tool-tag">Airtable</span>
+            <span class="role-tool-tag">n8n</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Communication Tracker</div>
+          <p class="role-desc">Logs every client interaction across email, calls, and chat. Provides instant context before any meeting so you're always prepared.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Gmail</span>
+            <span class="role-tool-tag">Slack</span>
+            <span class="role-tool-tag">Claude</span>
+          </div>
+        </div>
+        <div class="role-card fade-up">
+          <div class="role-title">AI Knowledge Base Builder</div>
+          <p class="role-desc">Creates and maintains client-facing FAQs, how-to guides, and self-service portals. Reduces repetitive questions and support requests.</p>
+          <div class="role-tools">
+            <span class="role-tool-tag">Notion</span>
+            <span class="role-tool-tag">Claude</span>
+            <span class="role-tool-tag">GitBook</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- BOTTOM CTA                                                      -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <section class="breakdown-cta">
+    <div class="gradient-orb orb-1" style="width:400px;height:400px;top:20%;left:5%;"></div>
+    <div class="gradient-orb orb-2" style="width:350px;height:350px;bottom:10%;right:5%;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <h2 class="fade-up">
+        That's <span class="gradient-text">30+ roles</span> — handled.<br>
+        One subscription. One flat fee.
+      </h2>
+      <p class="fade-up delay-1">
+        All of this is included in your $1,500/month plan.
+        Unlimited requests. Unlimited revisions. Deployed in days, not months.
+      </p>
+      <div class="breakdown-cta-buttons fade-up delay-2">
+        <a href="index.html#pricing" class="btn btn-primary btn-lg">
+          Get Started — $1,500/month
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="btn btn-outline btn-lg">Book a 15-Minute Walkthrough</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="url(#logoGrad2)"/>
+              <path d="M10 16L14 20L22 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="logoGrad2" x1="0" y1="0" x2="32" y2="32">
+                  <stop stop-color="#635BFF"/>
+                  <stop offset="1" stop-color="#0A2540"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>Backoffice Agency</span>
+          </a>
+          <p>AI-powered back office systems for consultants, home services, construction &amp; local businesses.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="index.html#what-we-replace">Services</a>
+            <a href="breakdown.html">Full Breakdown</a>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#roi">ROI</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Backoffice Agency. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

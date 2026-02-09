@@ -1479,7 +1479,7 @@ button {
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-2xl);
 }
 
